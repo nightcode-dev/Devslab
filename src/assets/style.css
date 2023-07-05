@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Npey";
+    src: url("./peyda/normal_peyda.ttf");
+  }
+  
+  @font-face {
+    font-family: "BRpey";
+    src: url("./peyda/peyda_barik.ttf");
+  }
+  
+  @font-face {
+    font-family: "NZpey";
+    src: url("./peyda/peyda_nazk.ttf");
+  }
+  
+  @font-face {
+    font-family: "SNZpey";
+    src: url("./peyda/peyda_so_nazk.ttf");
+  }
+  
+  @font-face {
+    font-family: "SBpey";
+    src: url("./peyda/peyda_so_thick.ttf");
+  }
+  
+  @font-face {
+    font-family: "SPBpey";
+    src: url("./peyda/sp_peyda_thick.ttf");
+  }
+  
+  @font-face {
+    font-family: "STpey";
+    src: url("./peyda/standard_peyda.ttf");
+  }
+  
+  @font-face {
+    font-family: "Bpey";
+    src: url("./peyda/black_peyda.ttf");
+  }
+  
+  .Npey {
+    font-family: Npey;
+  }
+  
+  .BRpey {
+    font-family: BRpey;
+  }
+  
+  .NZpey {
+    font-family: NZpey;
+  }
+  
+  .SNZpey {
+    font-family: SNZpey;
+  }
+  
+  .SBpey {
+    font-family: SBpey;
+  }
+  
+  .SPBpey {
+    font-family: SPBpey;
+  }
+  
+  .STpey {
+    font-family: STpey;
+  }
+  
+  .Bpey {
+    font-family: Bpey;
+  }
+  
+  @font-face {
+    font-family: "Destedad";
+    src: url("./estedad/es_black.ttf");
+  }
+  
+  @font-face {
+    font-family: "Lestedad";
+    src: url("./estedad/es_light.ttf");
+  }
+  
+  @font-face {
+    font-family: "Bestedad";
+    src: url("./estedad/es_bold.ttf");
+  }
+  
+  @font-face {
+    font-family: "Mestedad";
+    src: url("./estedad/es_med.ttf");
+  }
+  
+  @font-face {
+    font-family: "Testedad";
+    src: url("./estedad/es_thin.ttf");
+  }
+  
+  @font-face {
+    font-family: "VFestedad";
+    src: url("./estedad/es_vf.ttf");
+  }
+  
+  .Des {
+    font-family: Destedad;
+  }
+  
+  .Les {
+    font-family: Lestedad;
+  }
+  
+  .Bes {
+    font-family: Bestedad;
+  }
+  
+  .Mes {
+    font-family: Mestedad;
+  }
+  
+  .Tes {
+    font-family: Testedad;
+  }
+  
+  .VFes {
+    font-family: VFestedad;
+  }
+  
+  @font-face {
+    font-family: "Dmikhak";
+    src: url("./mikhak/dark-mikhak.ttf");
+  }
+  
+  @font-face {
+    font-family: "mikhak";
+    src: url("./mikhak/normal-mikhak.ttf");
+  }
+  
+  @font-face {
+    font-family: "Tmikhak";
+    src: url("./mikhak/thin-mikhak.ttf");
+  }
+  
+  @font-face {
+    font-family: "Bmikhak";
+    src: url("./mikhak/bold-mikhak.ttf");
+  }
+  
+  @font-face {
+    font-family: "DBmikhak";
+    src: url("./mikhak/dif-bold-mikhak.ttf");
+  }
+  
+  @font-face {
+    font-family: "Mmikhak";
+    src: url("./mikhak/medium-mikhak.ttf");
+  }
+  
+  .Mmikh {
+    font-family: Mmikhak;
+  }
+  .Bmikh {
+    font-family: Bmikhak;
+  }
+  .Dmikh {
+    font-family: Dmikhak;
+  }
+  .DBmikh {
+    font-family: DBmikhak;
+  }
+  .Tmikh {
+    font-family: Tmikhak;
+  }
+  .mikh {
+    font-family: mikhak;
+  }
+  
+  .img-box:hover .text-box {
+    visibility: visible;
+    opacity: 50%;
+  }
