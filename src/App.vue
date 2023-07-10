@@ -10,7 +10,7 @@
         <router-link active-class="text-main" to="/aboutUs" class="Bpey text-xl mx-2">درباره ما</router-link>
       </div>
       <div class="flex justify-end items-center ">
-        <img src="./assets/dark_logo.png" alt="logo" class="w- h-12">
+        <img src="./assets/dark_logo.png" alt="logo" class=" h-12">
       </div>
     </div>
     <div class="">
