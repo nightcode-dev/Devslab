@@ -1,7 +1,46 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 
 var fadeInElements = []
+const commentsObject = reactive({
+  comments: [
+    {
+      text: 'عالیه',
+      image: new URL('../assets/bg1.jpg', import.meta.url)
+    },
+    {
+      text: 'بده',
+      image: new URL('../assets/bg1.jpg', import.meta.url)
+    },
+    {
+      text: 'متوسطه',
+      image: new URL('../assets/bg1.jpg', import.meta.url)
+    }
+  ],
+  currentIndex: 0,
+  next() {
+    console.log('next called')
+    console.log(this.currentIndex)
+    if (this.currentIndex !== this.comments.length-1) {
+      console.log('next:current index not length')
+      this.currentIndex++
+    } else if (this.currentIndex === this.comments.length-1) {
+      console.log('next:current index is length')
+      this.currentIndex = 0
+    }
+  },
+  prev() {
+    console.log('prev called')
+    console.log(this.currentIndex)
+    if (this.currentIndex !== 0) {
+      console.log('prev:current index not 0')
+      this.currentIndex -= 1
+    } else if (this.currentIndex === 0) {
+      console.log('prev:current index is length')
+      this.currentIndex = this.comments.length-1
+    }
+  }
+})
 
 const isElemVisible = (el) => {
   var rect = el.getBoundingClientRect()
@@ -34,9 +73,8 @@ onMounted(() => {
       <div class="w-full flex flex-col items-center justify-center p-16">
         <h1 class="text-black STpey text-2xl"><b class="text-main Bpey">devslab</b> چیه؟</h1>
         <p class="text-gray-600 Mes text-md text-center">
-          <b class="text-main Bpey">دِوزلب</b> یک پلتفرم ایرانیه که یک محیط خیلی خوب برای نگه داری
-          ترتیب بندی و حتی ویرایش و نوشتن کد ها فراهم می کنه این محیط کاملا مناسب تیم ها طراحی شده
-          تا بتونن پروژه هاشون رو خیلی سریعتر توسعه بدن
+          <b class="text-main Bpey">دِوزلب</b> یک پلتفرم ایرانیه که یک محیط خیلی خوب برای تیم ها
+          فراهم می کنه تا بتونن خیلی منظم پروژه هاشون رو مدیریت کنن
         </p>
         <router-link
           to="/signup"
@@ -51,10 +89,14 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <div class="flex flex-col lg:flex-row justify-center p-4 py-8 w-full bg-gradient-to-br from-blue-400 to-blue-300">
-      <div class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main">
+    <div
+      class="flex flex-col lg:flex-row justify-center p-4 py-8 w-full bg-gradient-to-br from-blue-400 to-blue-300"
+    >
+      <div
+        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main"
+      >
         <div
-          class="m-auto rounded-full p-4 h-24 w-24 bg-white shadow-lg flex justify-center items-center text-main  "
+          class="m-auto rounded-full p-4 h-24 w-24 bg-white shadow-lg flex justify-center items-center text-main"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +119,9 @@ onMounted(() => {
           نیاز به هزینه هست
         </p>
       </div>
-      <div class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main">
+      <div
+        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main"
+      >
         <div
           class="m-auto rounded-full p-4 h-24 w-24 bg-white shadow-lg flex justify-center items-center text-main"
         >
@@ -92,13 +136,17 @@ onMounted(() => {
             />
           </svg>
         </div>
-        <h1 class="text-lg Bpey text-main text-center mt-2 group-hover:text-white">فضای ذخیره سازی رایگان</h1>
+        <h1 class="text-lg Bpey text-main text-center mt-2 group-hover:text-white">
+          فضای ذخیره سازی رایگان
+        </h1>
         <p class="text-gray-600 Mes text-md text-center mx-8 group-hover:text-white">
           این پلتفرم به شما یک گیگ فضای ذخیره سازی رایگان میده که میتونید از اون برای ذخیره فایل ها
           و پروژه هاتون استفاده کنید
         </p>
       </div>
-      <div class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main">
+      <div
+        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main"
+      >
         <div
           class="m-auto rounded-full p-4 h-24 w-24 bg-white shadow-lg flex justify-center items-center text-main"
         >
@@ -118,9 +166,59 @@ onMounted(() => {
         <h1 class="text-lg Bpey text-main text-center mt-2 group-hover:text-white">استفاده آسان</h1>
         <p class="text-gray-600 Mes text-md text-center mx-8 group-hover:text-white">
           محیط این پلتفرم طوری طراحی شده که شمابتونید خیلی سریع به همه بخش ها دسترسی داشته باشید در
-          عین حال به حدی ساده باشه کخ گیج نشید و بتونید به بهترین نحوه استفاده کنید
+          عین حال به حدی ساده باشه که گیج نشید و بتونید به بهترین نحوه استفاده کنید
         </p>
       </div>
+    </div>
+    <div class="p-4 bg-slate-100">
+      <h1 class="text-center text-2xl Bpey text-main mb-4">مشتری ها</h1>
+      <div class="flex justify-center flex-wrap">
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8" />
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-between items-center p-4 py-8 w-full bg-gradient-to-br from-blue-400 to-blue-300"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-min h-40 text-white hover:text-main"
+        @click="commentsObject.next"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+      <div class="flex flex-col w-full items-center">
+        <div class="w-32 h-32 overflow-hidden rounded-full border-4 border-white shadow-xl mb-8  flex items-center justify-center">
+          <img :src="commentsObject.comments[commentsObject.currentIndex].image" alt="" class="w-full h-full" />
+        </div>
+
+        <div
+          class="bg-white w-1/2 shadow-xl border border-gray-200 p-4 rounded-lg Bes text-center text-lg"
+        >
+          {{ commentsObject.comments[commentsObject.currentIndex].text }}
+        </div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-min h-40 text-white hover:text-main"
+        @click="commentsObject.prev"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
     </div>
   </div>
 </template>
