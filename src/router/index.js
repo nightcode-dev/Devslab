@@ -24,4 +24,12 @@ const router = createRouter({
   ]
 })
 
+router.beforeEach((to,from,nx)=>{
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  })
+  nx()
+})
+
 export default router

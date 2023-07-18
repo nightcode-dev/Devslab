@@ -1,10 +1,10 @@
 <template>
   <div
-    class="bg-gradient-to-br from-blue-400 to-blue-300 h-screen flex items-center justify-center"
+    class="bg-gradient-to-br from-blue-400 to-blue-300 h-full py-12 flex items-center justify-center"
   >
-    <div class="bg-slate-100 shadow-xl flex flex-col-reverse lg:flex-row w-full mx-4 lg:w-2/3 p-2">
-      <div class="w-full border-t-2 lg:border-t-0 lg:border-l-2 border-dashed border-gray-300 p-4">
-        <p class="text-lg Bes text-gray-600 text-center lg:text-right">
+    <div class="bg-slate-100 shadow-xl flex flex-col-reverse md:flex-row w-full mx-4 lg:w-2/3 md:w-4/5 p-2">
+      <div class="w-full border-t-2 md:border-t-0 md:border-l-2 border-dashed border-gray-300 p-4">
+        <p class="text-lg Bes text-gray-600 text-center md:text-right">
           اکانت داری؟همین الان
           <router-link
             to="/signin"
@@ -15,10 +15,10 @@
       </div>
       <div class="w-full text-center">
         <div class="flex w-full justify-center mt-4">
-          <div class="w-12 h-12 bg-slate-300 Bpey mx-4 rounded-full flex items-center justify-center text-2xl" :class="{'bg-slate-300':!signup,'bg-main':signup}">1</div>
-          <div class="w-12 h-12 bg-slate-300 Bpey mx-4 rounded-full flex items-center justify-center text-2xl" :class="{'bg-slate-300':!verification_email,'bg-main':verification_email}">2</div>
-          <div class="w-12 h-12 bg-slate-300 Bpey mx-4 rounded-full flex items-center justify-center text-2xl" :class="{'bg-slate-300':!team_form,'bg-main':team_form}">3</div>
-          <div class="w-12 h-12 bg-slate-300 Bpey mx-4 rounded-full flex items-center justify-center text-2xl" :class="{'bg-slate-300':!pricing_form,'bg-main':pricing_form}">4</div>
+          <div class="w-12 h-12 Bpey mx-4 rounded-full flex items-center justify-center text-3xl text-center" :class="{'bg-slate-300':!signup,'bg-main text-white':signup}">1</div>
+          <div class="w-12 h-12 Bpey mx-4 rounded-full flex items-center justify-center text-3xl text-center" :class="{'bg-slate-300':!verification_email,'bg-main text-white':verification_email}">2</div>
+          <div class="w-12 h-12 Bpey mx-4 rounded-full flex items-center justify-center text-3xl text-center" :class="{'bg-slate-300':!team_form,'bg-main text-white':team_form}">3</div>
+          <div class="w-12 h-12 Bpey mx-4 rounded-full flex items-center justify-center text-3xl text-center" :class="{'bg-slate-300':!pricing_form,'bg-main text-white':pricing_form}">4</div>
         </div>
         <div class="anime" :class="{ hidden: !signup, block: signup }">
           <h1 class="text-2xl Bpey mt-4">ثبت نام</h1>
@@ -131,7 +131,8 @@
                 type="text"
                 maxlength="1"
                 name=""
-                @keypress="goNext('num1', 'num2')"
+                @keyup="goNext('num1', 'num2',$event)"
+                v-modal="num1"
                 id="num1"
               />
             </div>
@@ -141,7 +142,8 @@
                 type="text"
                 maxlength="1"
                 name=""
-                @keypress="goNext('num2', 'num3')"
+                @keyup="goNext('num2', 'num3',$event,'num1')"
+                v-modal="num2"
                 id="num2"
               />
             </div>
@@ -151,7 +153,8 @@
                 type="text"
                 maxlength="1"
                 name=""
-                @keypress="goNext('num3', 'num4')"
+                @keyup="goNext('num3', 'num4',$event,'num2')"
+                v-modal="num3"
                 id="num3"
               />
             </div>
@@ -160,6 +163,7 @@
                 class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-main"
                 type="text"
                 maxlength="1"
+                @keyup="goNext('num4',undefined,$event,'num3')"
                 name=""
                 id="num4"
               />
@@ -268,13 +272,36 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref,watch } from 'vue'
 
 const signup = ref(true)
 const verification_email = ref(false)
 const team_form = ref(false)
 const pricing_form = ref(false)
 const email = ref('')
+const num1 = ref()
+const num2 = ref()
+const num3 = ref()
+const num4 = ref()
+watch(num1,(val,old)=>{
+  if(val.length === 1){
+    document.getElementById('num2').focus()
+  }
+})
+
+watch(num2,(val,old)=>{
+  if(val.length === 1){
+    document.getElementById('num3').focus()
+  }
+})
+
+watch(num3,(val,old)=>{
+  if(val.length === 1){
+    document.getElementById('num4').focus()
+  }
+})
+
+
 function switchBox(to) {
   if (to === 'signup') {
     signup.value = true
@@ -298,11 +325,18 @@ function switchBox(to) {
     pricing_form.value = true
   }
 }
-
-function goNext(fromid, nextid) {
+function goNext(fromid,nextid,event,beforeid) {
   const currentEl = document.getElementById(fromid)
-  if ((+currentEl.value || currentEl.value == 0) && currentEl.value.length === 1) {
-    const nextEl = document.getElementById(nextid).focus()
+  if(event.key == 'Backspace' && beforeid && fromid !== 'num1'){
+    document.getElementById(beforeid).focus()
+  }else if(nextid){
+    if (currentEl.value.length === 1) {
+    if(+currentEl.value || +currentEl.value === 0){
+      document.getElementById(nextid).focus()
+    }else{
+      currentEl.value = ''
+    }
+  }
   }
 }
 </script>

@@ -65,7 +65,7 @@ onMounted(() => {
 
 <template>
   <div class="">
-    <div class="flex flex-col-reverse lg:flex-row items-center justify-center bg-slate-100">
+    <div class="flex flex-col-reverse md:flex-row items-center justify-center bg-slate-100">
       <div class="w-full flex flex-col items-center justify-center p-16">
         <h1 class="text-black STpey text-2xl"><b class="text-main Bpey">devslab</b> چیه؟</h1>
         <p class="text-gray-600 Mes text-md text-center">
@@ -86,10 +86,10 @@ onMounted(() => {
       </div>
     </div>
     <div
-      class="flex flex-col lg:flex-row justify-center p-4 py-8 w-full bg-gradient-to-br from-blue-400 to-blue-300"
+      class="flex flex-col md:flex-row justify-center p-4 py-8 w-full bg-gradient-to-br from-blue-400 to-blue-300"
     >
       <div
-        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main"
+        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 md:w-1/3 my-4 md:my-0 md:mx-4 hover:bg-main"
       >
         <div
           class="m-auto rounded-full p-4 h-24 w-24 bg-white shadow-lg flex justify-center items-center text-main"
@@ -116,7 +116,7 @@ onMounted(() => {
         </p>
       </div>
       <div
-        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main"
+        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 md:w-1/3 my-4 md:my-0 md:mx-4 hover:bg-main"
       >
         <div
           class="m-auto rounded-full p-4 h-24 w-24 bg-white shadow-lg flex justify-center items-center text-main"
@@ -141,7 +141,7 @@ onMounted(() => {
         </p>
       </div>
       <div
-        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 my-4 lg:my-0 lg:mx-4 hover:bg-main"
+        class="fadein group bg-slate-100 shadow-xl rounded-lg p-4 w-full lg:w-1/4 md:w-1/3 my-4 md:my-0 md:mx-4 hover:bg-main"
       >
         <div
           class="m-auto rounded-full p-4 h-24 w-24 bg-white shadow-lg flex justify-center items-center text-main"

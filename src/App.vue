@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+
+</script>
 
 <template>
   <div class="">
@@ -60,10 +62,10 @@
 
               <h1>لینک های کاربردی</h1>
             </div>
-            <router-link to="/" class="anime Bes text-lg mx-2 hover:text-main mt-4"
+            <router-link to="/" class="anime Bes text-lg mx-2 hover:text-main mt-4 break-normal w-min min-w-max"
               >خانه</router-link
             >
-            <router-link to="/pricing" class="anime Bes text-lg mx-2 hover:text-main mt-2"
+            <router-link to="/pricing" class="anime Bes text-lg mx-2 hover:text-main mt-2 break-normal w-min min-w-max"
               >تعرفه ها</router-link
             >
           </div>
