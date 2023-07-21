@@ -183,10 +183,9 @@
               </svg>
             </div>
             <div
-              class="anime absolute bottom-4 right-4 flex flex-row-revese text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2"
+              class="anime absolute bottom-4 right-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2"
             >
-              <p>ویرایش اطلاعات</p>
-              <svg
+            <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -200,6 +199,8 @@
                   d="M8.25 4.5l7.5 7.5-7.5 7.5"
                 />
               </svg>
+              <p>ویرایش اطلاعات</p>
+              
             </div>
           </div>
         </div>
