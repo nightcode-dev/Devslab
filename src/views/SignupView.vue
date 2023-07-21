@@ -26,23 +26,11 @@
           <div
             class="w-12 h-12 Bpey mx-4 rounded-full flex items-center justify-center text-3xl text-center"
             :class="{
-              'bg-slate-300': !verification_email,
-              'bg-main text-white': verification_email
+              'bg-slate-300': !team_form,
+              'bg-main text-white': team_form
             }"
           >
             2
-          </div>
-          <div
-            class="w-12 h-12 Bpey mx-4 rounded-full flex items-center justify-center text-3xl text-center"
-            :class="{ 'bg-slate-300': !team_form, 'bg-main text-white': team_form }"
-          >
-            3
-          </div>
-          <div
-            class="w-12 h-12 Bpey mx-4 rounded-full flex items-center justify-center text-3xl text-center"
-            :class="{ 'bg-slate-300': !pricing_form, 'bg-main text-white': pricing_form }"
-          >
-            4
           </div>
         </div>
         <div class="anime" :class="{ hidden: !signup, block: signup }">
