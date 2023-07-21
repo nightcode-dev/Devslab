@@ -183,6 +183,7 @@
               </svg>
             </div>
             <div
+              @click="switchBox('signup')"
               class="anime absolute bottom-4 right-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2"
             >
             <svg
