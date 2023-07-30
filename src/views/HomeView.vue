@@ -169,14 +169,14 @@ onMounted(() => {
     <div class="p-4 bg-slate-100">
       <h1 class="text-center text-2xl Bpey text-main mb-4">مشتری ها</h1>
       <div class="flex justify-center flex-wrap">
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
-        <img src="../assets/dark_logo.png" alt="" class="w-1/5 h-min grayscale mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
+        <img src="../assets/dark_logo.png" alt="" class="anime w-1/5 h-min grayscale hover:grayscale-0 mx-8 my-4" />
       </div>
     </div>
     <div
