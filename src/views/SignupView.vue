@@ -137,7 +137,8 @@
             >قوانین و شرایط ایجاد تیم را خوانده و می پذیرم</label
           >
         </div>
-        <div
+        <router-link
+          :to="{name:'dashboard'}"
           class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2"
         >
           <p>ثبت نهایی</p>
@@ -153,7 +154,7 @@
               clip-rule="evenodd"
             />
           </svg>
-        </div>
+        </router-link>
         <div
           @click="switchBox('signup')"
           class="anime absolute bottom-4 right-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2"

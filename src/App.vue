@@ -5,9 +5,10 @@
 <template>
   <div class="">
     <div
+      v-show="!$route.path.includes('dashboard')"
       class="fixed top-0 h-min flex justify-between p-2 w-full z-50 bg-gray-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border-b border-gray-400"
     >
-      <router-link to="/signin" class=" text-slate-400 anime flex items-center justify-center hover:text-main hover:opacity-75 hover:bg-blue-200 w-14 h-14 p-2 rounded-full">
+      <router-link active-class="text-main" to="/signin" class=" anime flex items-center justify-center hover:text-main hover:opacity-75 hover:bg-blue-200 w-14 h-14 p-2 rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -40,9 +41,9 @@
       </div>
     </div>
     <div class="">
-      <router-view class="mt-20"></router-view>
+      <router-view :class="{'mt-20':!$route.path.includes('dashboard')}" :key="$route.path"></router-view>
     </div>
-    <div>
+    <div v-show="!$route.path.includes('dashboard')">
       <div class="flex flex-col-reverse md:flex-row bg-slate-100">
         <div class="flex flex-col p-4 w-full lg:w-1/2">
           <div class="flex flex-col">
