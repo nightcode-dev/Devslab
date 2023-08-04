@@ -45,12 +45,26 @@ const router = createRouter({
         {
           path:'projects',
           name:'dashboard-projects',
-          component:ProjectsView
+          component:ProjectsView,
+          children:[
+            {
+              path:'statistics',
+              name:'dashboard-projects-statistics',
+              component:ProjectsView
+            }
+          ]
         },
         {
           path:'users',
           name:'dashboard-users',
-          component:UsersView
+          component:UsersView,
+          children:[
+            {
+              path:'statistics',
+              name:'dashboard-users-statistics',
+              component:UsersView
+            }
+          ]
         },
         {
           path:'setting',
