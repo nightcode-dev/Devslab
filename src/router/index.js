@@ -8,6 +8,7 @@ import MainView from '../views/panel/HomeView.vue'
 import ProjectsView from '../views/panel/ProjectsView.vue'
 import UsersView from '../views/panel/UsersView.vue'
 import SettingView from '../views/panel/SettingView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,8 +34,9 @@ const router = createRouter({
       component: SigninView
     },
     {
-      path: '/dashboard',
+      path: '/dashboard/:id?',
       name: 'dashboard',
+      props:true,
       component: DashboardView,
       children: [
         {
@@ -72,6 +74,11 @@ const router = createRouter({
           component:SettingView
         }
       ]
+    },
+    {
+      path:'/:notFOund',
+      name:'notFound',
+      component:NotFoundView
     }
   ]
 })

@@ -2,12 +2,13 @@
   <div class="h-screen bg-gradient-to-br from-blue-400 to-blue-300 w-full">
     <div class="flex justify-between items-center p-4">
       <div class="flex w-full">
-        <div
+        <router-link
+          :to="`/dashboard/${teamid}/stting/profile`"
           class="anime flex bg-blue-300 rounded-full p-2 items-center hover:bg-blue-200 hover:shadow-xl"
         >
           <img src="../../assets/bg1.jpg" alt="" class="w-8 h-8 rounded-full ring-4 ring-main" />
           <p class="mr-2 Bes hidden md:block">امیرحسین آخوندزاده</p>
-        </div>
+        </router-link>
         <div
           class="anime hidden md:inline-flex flex bg-blue-300 rounded-full p-2 items-center hover:bg-blue-200 hover:shadow-xl mx-2"
         >
@@ -29,7 +30,7 @@
       <div class="flex w-full">
         <div class="flex mx-2 text-white w-full">
           <router-link
-            to="/dashboard"
+            :to="`/dashboard/${teamid}`"
             exact-active-class="bg-white bg-opacity-60 text-main"
             class="anime p-2 rounded-lg w-12 h-12 hover:bg-blue-200 hover:text-main flex items-center justify-center mx-2"
           >
@@ -49,7 +50,7 @@
             </svg>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-projects' }"
+            :to="{ name: 'dashboard-projects', params: { id: teamid } }"
             active-class="bg-white bg-opacity-60 text-main"
             class="anime p-2 rounded-lg w-12 h-12 hover:bg-blue-200 hover:text-main flex items-center justify-center mx-2"
           >
@@ -69,7 +70,7 @@
             </svg>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-users' }"
+            :to="{ name: 'dashboard-users', params: { id: teamid } }"
             active-class="bg-white bg-opacity-60 text-main"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main w-12 h-12 flex items-center justify-center mx-2"
           >
@@ -89,7 +90,7 @@
             </svg>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-setting' }"
+            :to="{ name: 'dashboard-setting', params: { id: teamid } }"
             active-class="bg-white bg-opacity-60 text-main"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main w-12 h-12 flex items-center justify-center mx-2"
           >
@@ -120,10 +121,19 @@
       </div>
     </div>
     <div class="bg-white rounded-t-3xl h-full flex">
-      <div class="lg:w-1/4 w-1/3 bg-slate-100 rounded-tr-3xl p-2">
-        <div v-show="$route.path === '/dashboard'">
+      <div class="w-1/6 lg:w-1/5 bg-slate-100 rounded-tr-3xl p-2">
+        <div class="group hover:bg-main hover:text-white bg-white shadow-xl my-4 w-3/4 mx-auto p-1 px-2 rounded-full Bes flex justify-center">
+          <select name="" @change="changeTeam($event)" id="" class="Bes p-2  bg-transparent outline-none w-full">
+            <option value="local" class="text-black">بدون تیم</option>
+            <option value="devslab" class="text-black">دوزلب</option>
+            <option value="team1" class="text-black">تیم 1</option>
+            <option value="team2" class="text-black">تیم2</option>
+
+          </select>
+        </div>
+        <div v-show="$route.path === `/dashboard/${teamid}`">
           <router-link
-            to="/dashboard"
+            :to="{ name: 'dashboard-home', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -143,7 +153,7 @@
             <h1 class="Bes text-lg mr-1">خانه</h1>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-projects' }"
+            :to="{ name: 'dashboard-projects', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -163,7 +173,7 @@
             <h1 class="Bes text-lg mr-1">پروژه ها</h1>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-users' }"
+            :to="{ name: 'dashboard-users', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -183,7 +193,7 @@
             <h1 class="Bes text-lg mr-1">اعضا</h1>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-setting' }"
+            :to="{ name: 'dashboard-setting', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -208,9 +218,9 @@
             <h1 class="Bes text-lg mr-1">تنظیمات</h1>
           </router-link>
         </div>
-        <div v-show="$route.path.includes('/dashboard/projects')">
+        <div v-show="$route.path.includes(`/dashboard/${teamid}/projects`)">
           <router-link
-            :to="{ name: 'dashboard-projects' }"
+            :to="{ name: 'dashboard-projects', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -230,7 +240,7 @@
             <h1 class="Bes text-lg mr-1">لیست پروژه ها</h1>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-projects-statistics' }"
+            :to="{ name: 'dashboard-projects-statistics', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -256,9 +266,9 @@
             <h1 class="Bes text-lg mr-1">آمار پروژه ها</h1>
           </router-link>
         </div>
-        <div v-show="$route.path.includes('/dashboard/users')">
+        <div v-show="$route.path.includes(`/dashboard/${teamid}/users`)">
           <router-link
-            :to="{ name: 'dashboard-users' }"
+            :to="{ name: 'dashboard-users', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -278,7 +288,7 @@
             <h1 class="Bes text-lg mr-1">لیست کاربر ها</h1>
           </router-link>
           <router-link
-            :to="{ name: 'dashboard-users-statistics' }"
+            :to="{ name: 'dashboard-users-statistics', params: { id: teamid } }"
             class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
           >
             <svg
@@ -304,7 +314,7 @@
             <h1 class="Bes text-lg mr-1">آمار کاربر ها</h1>
           </router-link>
         </div>
-        <div v-show="$route.name === 'dashboard-setting'">setting sidebar</div>
+        <div v-show="$route.path.includes(`/dashboard/${teamid}/setting`)">setting sidebar</div>
       </div>
       <div class="lg:w-3/4 w-2/3">
         <router-view></router-view>
@@ -314,6 +324,11 @@
 </template>
 
 <script setup>
+import { ref,watch } from 'vue'
+import { useRoute,useRouter } from 'vue-router'
+const route = useRoute()
+const router = useRouter()
+const teamid = ref(route.params.id)
 var time = new Date()
 time = time.toLocaleDateString('fa-IR', {
   weekday: 'long',
@@ -321,6 +336,15 @@ time = time.toLocaleDateString('fa-IR', {
   month: 'long',
   day: 'numeric'
 })
+
+function changeTeam(e){
+  teamid.value = e.target.value
+  router.push({
+    params:{
+      id:teamid.value
+    }
+  })
+}
 </script>
 
 <style></style>
