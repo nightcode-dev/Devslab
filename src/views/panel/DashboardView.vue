@@ -1,16 +1,16 @@
 <template>
-  <div class="h-screen bg-gradient-to-br from-blue-400 to-blue-300 w-full">
+  <div class="h-screen bg-gradient-to-r from-blue-400 to-blue-300 w-full">
     <div class="flex justify-between items-center p-4">
       <div class="flex w-full">
         <router-link
           :to="`/dashboard/${teamid}/stting/profile`"
-          class="anime flex bg-blue-300 rounded-full p-2 items-center hover:bg-blue-200 hover:shadow-xl"
+          class="anime flex shadow-inner bg-blue-400 rounded-full p-2 items-center hover:bg-blue-200 hover:shadow-xl"
         >
           <img src="../../assets/bg1.jpg" alt="" class="w-8 h-8 rounded-full ring-4 ring-main" />
           <p class="mr-2 Bes hidden md:block">امیرحسین آخوندزاده</p>
         </router-link>
         <div
-          class="anime hidden md:inline-flex flex bg-blue-300 rounded-full p-2 items-center hover:bg-blue-200 hover:shadow-xl mx-2"
+          class="anime shadow-inner hidden md:inline-flex flex bg-blue-400 rounded-full p-2 items-center hover:bg-blue-200 hover:shadow-xl mx-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -121,9 +121,9 @@
       </div>
     </div>
     <div class="bg-white rounded-t-3xl h-full flex">
-      <div class="w-1/6 lg:w-1/5 bg-slate-100 rounded-tr-3xl p-2">
+      <div class="w-1/6 lg:w-1/5 bg-slate-100 rounded-tr-3xl p-2 h-full">
         <div class="group hover:bg-main hover:text-white bg-white shadow-xl my-4 w-3/4 mx-auto p-1 px-2 rounded-full Bes flex justify-center">
-          <select name="" @change="changeTeam($event)" id="" class="Bes p-2  bg-transparent outline-none w-full">
+          <select name="" @change="changeTeam($event)" id="" v-model="teamid" class="Bes p-2  bg-transparent outline-none w-full">
             <option value="local" class="text-black">بدون تیم</option>
             <option value="devslab" class="text-black">دوزلب</option>
             <option value="team1" class="text-black">تیم 1</option>
@@ -316,8 +316,8 @@
         </div>
         <div v-show="$route.path.includes(`/dashboard/${teamid}/setting`)">setting sidebar</div>
       </div>
-      <div class="lg:w-3/4 w-2/3">
-        <router-view></router-view>
+      <div class="lg:w-3/4 w-2/3 h-full">
+        <router-view class="w-full"></router-view>
       </div>
     </div>
   </div>
