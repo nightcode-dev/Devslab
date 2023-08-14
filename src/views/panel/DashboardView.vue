@@ -120,8 +120,8 @@
         </div>
       </div>
     </div>
-    <div class="bg-white rounded-t-3xl h-full flex">
-      <div class="w-1/6 lg:w-1/5 bg-slate-100 rounded-tr-3xl p-2 h-full">
+    <div class="bg-white rounded-t-3xl h-fit flex">
+      <div class="w-min lg:w-1/5 bg-slate-100 rounded-tr-3xl p-2 ">
         <div class="group hover:bg-main hover:text-white bg-white shadow-xl my-4 w-3/4 mx-auto p-1 px-2 rounded-full Bes flex justify-center">
           <select name="" @change="changeTeam($event)" id="" v-model="teamid" class="Bes p-2  bg-transparent outline-none w-full">
             <option value="local" class="text-black">بدون تیم</option>
@@ -134,7 +134,7 @@
         <div v-show="$route.path === `/dashboard/${teamid}`">
           <router-link
             :to="{ name: 'dashboard-home', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -150,11 +150,11 @@
                 d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
               />
             </svg>
-            <h1 class="Bes text-lg mr-1">خانه</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">خانه</h1>
           </router-link>
           <router-link
             :to="{ name: 'dashboard-projects', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -170,11 +170,11 @@
                 d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776"
               />
             </svg>
-            <h1 class="Bes text-lg mr-1">پروژه ها</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">پروژه ها</h1>
           </router-link>
           <router-link
             :to="{ name: 'dashboard-users', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -190,11 +190,11 @@
                 d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
               />
             </svg>
-            <h1 class="Bes text-lg mr-1">اعضا</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">اعضا</h1>
           </router-link>
           <router-link
             :to="{ name: 'dashboard-setting', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -215,13 +215,13 @@
                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-            <h1 class="Bes text-lg mr-1">تنظیمات</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">تنظیمات</h1>
           </router-link>
         </div>
         <div v-show="$route.path.includes(`/dashboard/${teamid}/projects`)">
           <router-link
             :to="{ name: 'dashboard-projects', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -237,11 +237,11 @@
                 d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776"
               />
             </svg>
-            <h1 class="Bes text-lg mr-1">لیست پروژه ها</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">لیست پروژه ها</h1>
           </router-link>
           <router-link
             :to="{ name: 'dashboard-projects-statistics', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -263,13 +263,13 @@
               />
             </svg>
 
-            <h1 class="Bes text-lg mr-1">آمار پروژه ها</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">آمار پروژه ها</h1>
           </router-link>
         </div>
         <div v-show="$route.path.includes(`/dashboard/${teamid}/users`)">
           <router-link
             :to="{ name: 'dashboard-users', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -285,11 +285,11 @@
                 d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
               />
             </svg>
-            <h1 class="Bes text-lg mr-1">لیست کاربر ها</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">لیست کاربر ها</h1>
           </router-link>
           <router-link
             :to="{ name: 'dashboard-users-statistics', params: { id: teamid } }"
-            class="anime p-2 rounded-lg hover:bg-blue-200 hover:text-main flex items-stretch my-2"
+            class="anime group p-2 rounded-lg hover:bg-blue-200 hover:text-main flex flex-col lg:flex-row items-center my-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -311,12 +311,12 @@
               />
             </svg>
 
-            <h1 class="Bes text-lg mr-1">آمار کاربر ها</h1>
+            <h1 class="Bes text-lg mr-1 hidden group-hover:block lg:block">آمار کاربر ها</h1>
           </router-link>
         </div>
         <div v-show="$route.path.includes(`/dashboard/${teamid}/setting`)">setting sidebar</div>
       </div>
-      <div class="lg:w-3/4 w-2/3 h-full">
+      <div class="lg:w-3/4 w-2/3">
         <router-view class="w-full"></router-view>
       </div>
     </div>
