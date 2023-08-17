@@ -1,5 +1,22 @@
 <template>
   <div class="p-4">
+    <div class="w-full flex justify-end">
+      <router-link :to="{name:'dashboard-projects-new',params:{id:$route.params.id}}" class="anime rounded-xl w-fit bg-main opacity-50 flex Bes p-2 text-white hover:opacity-100">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-6 ml-1"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        ساخت پروژه جدید
+      </router-link>
+    </div>
     <div class="flex flex-col">
       <h1
         class="underline decoration-dashed decoration-main decoration-4 underline-offset-8 text-2xl Bpey"
@@ -93,7 +110,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 1000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>
@@ -182,7 +202,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234/2344`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 2000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>
@@ -271,7 +294,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234/2344`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 3000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>
@@ -360,7 +386,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234/2344`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 4000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>
@@ -458,7 +487,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 5000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>
@@ -547,7 +579,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234/2344`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 6000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>
@@ -636,7 +671,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234/2344`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 7000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>
@@ -725,7 +763,10 @@
             </div>
           </div>
           <router-link
-            :to="`/dashboard/${teamid}/projects/1234/2344`"
+            :to="{
+              name: 'dashboard-projects-project',
+              params: { id: $route.params.id, project_id: 8000 }
+            }"
             class="anime absolute bottom-4 left-4 flex text-main Mes hover:text-main hover:bg-blue-300 rounded-full p-2 group-hover:text-white group-hover:hover:bg-blue-400"
           >
             <p>مشاهده پروژه</p>

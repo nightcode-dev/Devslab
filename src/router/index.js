@@ -9,6 +9,9 @@ import ProjectsView from '../views/panel/ProjectsView.vue'
 import UsersView from '../views/panel/UsersView.vue'
 import SettingView from '../views/panel/SettingView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
+import ProjectView from '../views/panel/ProjectView.vue'
+import NewProjectView from '../views/panel/NewProjectView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,6 +58,16 @@ const router = createRouter({
               component:ProjectsView
             }
           ]
+        },
+        {
+          path:'projects/:project_id',
+          name:'dashboard-projects-project',
+          component:ProjectView
+        },
+        {
+          path:'projects/new',
+          name:'dashboard-projects-new',
+          component:NewProjectView
         },
         {
           path:'users',
