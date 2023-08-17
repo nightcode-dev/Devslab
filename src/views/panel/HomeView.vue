@@ -1,22 +1,24 @@
 <template>
   <div class="p-4">
     <div class="flex justify-center w-full">
-      <div
+      <router-link
+        :to="{name:'dashboard-users',params:{id:$route.params.id}}"
         class="anime w-1/2 shadow-md mx-2 rounded-xl bg-slate-100 group p-2 hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-400"
       >
         <h1 class="text-xl Bes group-hover:text-white">
           <b class="text-7xl text-main Bpey group-hover:text-white">10 </b>
           نفر عضو تیم
         </h1>
-      </div>
-      <div
+      </router-link>
+      <router-link
+        :to="{name:'dashboard-projects',params:{id:$route.params.id}}"
         class="anime w-1/2 shadow-md mx-2 rounded-xl bg-slate-100 group p-2 hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-400"
       >
         <h1 class="text-xl Bes group-hover:text-white">
           <b class="text-7xl text-main Bpey group-hover:text-white">10 </b>
           پروژه تمام شده
         </h1>
-      </div>
+      </router-link>
     </div>
     <div class="flex flex-col my-8 p-2">
       <div class="my-4">
